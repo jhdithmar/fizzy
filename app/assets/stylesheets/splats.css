@@ -29,6 +29,20 @@
   place-items: center;
   position: relative;
 
+  .windshield & {
+    animation: splat 200ms normal forwards ease-in-out;
+
+    &:nth-of-type(2n) {
+      animation-delay: 50ms;
+    }
+
+    &:nth-of-type(4n) {
+      animation-delay: 100ms;
+    }
+
+    [data-turbo-preview] & { animation: none; }
+  }
+
   > * {
     grid-area: 1/1;
   }

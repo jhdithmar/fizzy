@@ -10,3 +10,11 @@
   50% { transform: translateX(-1rem); }
   75% { transform: translateX(1rem); }
 }
+
+@keyframes splat {
+  0% { transform: scale(150%); opacity: 0; }
+  29% { transform: scale(150%); opacity: 0; }
+  30% { transform: scale(150%); opacity: 0.5; }
+  80% { transform: scale(90%); opacity: 1; }
+  100% { transform: scale(100%); }
+}
