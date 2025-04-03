@@ -51,7 +51,6 @@
       <% end %>
     </div>
 
-
     <% if @bubble.published? %>
       <div class="card-actions card-actions--right flex flex-column gap-half">
         <%= turbo_frame_tag dom_id(@bubble, :watch), src: bucket_bubble_watch_path(@bubble.bucket, @bubble), refresh: :morph %>
@@ -61,9 +60,7 @@
   </div>
 
   <% unless @bubble.drafted? || @bubble.creating? %>
-    <div class="card__actions-wrapper">
-      <%= render "bubbles/pop_toggle", bubble: @bubble %>
-    </div>
+    <%= render "bubbles/pop_toggle", bubble: @bubble %>
   <% end %>
 
   <% if @bubble.published? %>

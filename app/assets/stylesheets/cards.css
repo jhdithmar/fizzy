@@ -1,5 +1,5 @@
 @layer components {
-  /* Card containers
+  /* Card wrappers
   /* ------------------------------------------------------------------------ */
 
   .cards {
@@ -188,8 +188,8 @@
   /* ------------------------------------------------------------------------ */
 
   .card-actions {
-    position: absolute;
     inset: var(--actions-block-inset) auto auto calc(var(--actions-inline-inset) * -1);
+    position: absolute;
     z-index: 0;
 
     &:has(dialog[open]) {
@@ -201,8 +201,9 @@
     inset: var(--actions-block-inset) calc(var(--actions-inline-inset) * -1) auto auto;
   }
 
-  .card__actions-container {
+  .card-status-toggle {
     background-color: var(--color-bg);
+    inline-size: fit-content;
     margin-block: calc(var(--block-space) * -1) var(--block-space);
     padding: var(--block-space) var(--inline-space-double);
     position: relative;
