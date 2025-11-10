@@ -1,5 +1,6 @@
+<% account = Account.find_by_external_account_id!(request.env["fizzy.external_account_id"]) rescue nil %>
 {
-  "name": "<%= [ Current.account.name, "Fizzy", Rails.env.production? ? nil : Rails.env ].compact.join(" - ") %>",
+  "name": "<%= [ account&.name, "Fizzy", Rails.env.production? ? nil : Rails.env ].compact.join(" - ") %>",
   "icons": [
     {
       "src": "/app-icon-192.png",
