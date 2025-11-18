@@ -184,7 +184,7 @@ export default class extends Controller {
   }
 
   #focus(column) {
-    this.dispatch("focus", { detail: { column, column: column } })
+    this.dispatch("focus", { detail: { column } })
   }
 
   get allColumns() {
