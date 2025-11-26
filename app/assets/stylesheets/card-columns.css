@@ -716,6 +716,7 @@
 
   /* Surface a mini bubble if there are cards with bubbles inside */
   @media (min-width: 640px) {
+    .cards--considering:has(.bubble:not([hidden])),
     .cards--doing.is-collapsed:has(.bubble:not([hidden])) {
       .cards__transition-container {
         --bubble-color: var(--card-color, oklch(var(--lch-blue-medium)));
@@ -735,6 +736,11 @@
           translate: 20% -20%;
           z-index: 1;
         }
+      }
+
+      .cards--considering &:before {
+        inset: 0 auto auto 0;
+        translate: 100% 75%;
       }
     }
   }

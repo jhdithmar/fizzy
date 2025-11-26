@@ -4,7 +4,7 @@ class User < ApplicationRecord
   include Timelined # Depends on Accessor
 
   has_one_attached :avatar do |attachable|
-    attachable.variant :thumb, resize_to_limit: [ 256, 256 ]
+    attachable.variant :thumb, resize_to_fill: [ 256, 256 ]
   end
 
   belongs_to :account
@@ -18,8 +18,6 @@ class User < ApplicationRecord
   has_many :pinned_cards, through: :pins, source: :card
 
   scope :with_avatars, -> { preload(:account, :avatar_attachment) }
-
-  delegate :staff?, to: :identity, allow_nil: true
 
   def deactivate
     transaction do
