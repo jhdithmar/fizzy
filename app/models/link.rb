@@ -1,7 +1,6 @@
 class Link
   UNFURLERS = [
     FizzyUnfurler,
-    BasecampUnfurler
   ]
 
   attr_reader :uri, :metadata, :user
